@@ -1,0 +1,22 @@
+<style type="text/css">
+.title
+{
+	margin: 4px auto;
+	width: 60%;
+	height: 22px;
+	line-height: 22px;
+	text-align: left;
+	border: 1px solid #ccc;
+	border-radius:3px;
+}
+
+.title a
+{
+	color: #333;
+}
+
+.title a:hover
+{
+	color: #ccc;
+}
+</style>
