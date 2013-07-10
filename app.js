@@ -4,7 +4,6 @@ var iconv = require('iconv-lite');
 var cheerio = require('cheerio');
 var util = require('util');
 
-//yaasdsdfsdfasdfsdfsdfsdfsdf sdfasdfasdfdfasd sdfjassdfasdf asdfasdfadsf
 var url = "http://cnodejs.org/"
 
 function getu(){
@@ -13,7 +12,7 @@ function getu(){
         res.setEncoding('binary');
 
         res.on('data' , function(d){
-            stack += d; nihao  nihao //asdfasdfnidfasdfninihao  nisdfasdfsdfadfasdfasdfsdfasdf
+            stack += d; 
         }).on('error',function(err){
             console.log(err.message);
         });
