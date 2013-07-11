@@ -1,0 +1,2798 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <meta name='description' content='CNode：Node.js专业中文社区'>
+    
+    <meta name="author" content="EDP@TaoBao" />
+    
+    <meta property="wb:webmaster" content="617be6bd946c6b96" />
+    
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="/rss" />
+    <!-- style -->
+    <link rel="stylesheet" href="http://cnodejs.qiniudn.com/public/stylesheets/index.min.3db2d1c8.css" media="all" />
+
+    
+    <script src="http://cnodejs.qiniudn.com/public/index.min.608faa1f.js"></script>
+
+    
+    
+    <title>用node做了个日记本网站。 - CNode</title>
+    
+  </head>
+  <body>
+    <!-- navbar -->
+    <div class='navbar'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='brand' href='/'><img src="/public/images/logo.png" title="Node.js专业中文社区" /></a>
+          <form id='search_form' class='navbar-search' action="/">
+            <input type='text' id='q' name='q' class='search-query span3' value=''/>
+          </form>
+          <ul class='nav pull-right'>
+            <li><a href='/'>首页</a></li>
+            
+            <li><a href="/tag/社区活动" target="">社区活动</a></li>
+            
+            <li><a href="http://cnodejs.net/" target="_blank">NAE</a></li>
+            
+            <li><a href="/topic/4f17948d9f40a8335200518e" target="">志愿者</a></li>
+            
+            <li><a href="/about" target="">关于我们</a></li>
+            
+            
+            <li><a href='/signup'>注册</a></li>
+            <li><a href='/signin'>登录</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- wrapper -->
+    <div id='wrapper'>
+      <div id='main'>
+        <div id='sidebar'>
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>作者</span>
+    </div>
+    <div class='inner'>
+      <div class='user_card'>
+	<div>
+		<a  class='user_avatar'  href="/user/xiaojue">
+			<img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+		</a>
+		<span class='user_name'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+
+		
+
+		<div class='board clearfix'>
+			<div class='floor'>
+				<a href='/user/xiaojue/tags/'><span class='big'>0</span> 标签收藏</a>
+				<div class='space'></div>
+				<a href='/user/xiaojue/collections'><span class='big'>1</span> 话题收藏</a>
+			</div>
+			<div class='floor'>
+				<a href='/user/xiaojue/following'><span class='big'>7</span> 关注</a>
+				<div class='space'></div>
+				<a href='/user/xiaojue/follower'><span class='big'>39</span> 粉丝</a>
+				<div class='space'></div>
+				<span class='big'>615</span> 积分
+			</div>
+
+			
+		</div>
+	</div>
+</div>
+
+
+
+    </div>
+  </div>
+
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>作者其它话题</span>
+    </div>
+    <div class='inner'>
+      
+      <ul class='unstyled'>
+      <li>
+	<div><a class='dark' href="/topic/508a3dcc65e98a9809b38c9c" title="tuer日记网站，源码已开放，npm也已发~">tuer日记网站，源码已开放，npm也已发~</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/516ccc2c6d382773065c1064" title="dropbox支持nodejs啦。">dropbox支持nodejs啦。</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/516774906d38277306ff5647" title="拿nodejs快速搭建简单Oauth认证和restful API server攻略。">拿nodejs快速搭建简单Oauth认证和restful API server攻略。</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/515abb116d3827730613e9c8" title="restify and express 一起用的有吗？">restify and express 一起用的有吗？</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/5104ca8ddf9e9fcc587bf5f3" title="初学者如何学习nodejs。">初学者如何学习nodejs。</a></div>
+</li>
+
+      </ul>
+      
+    </div>
+  </div>
+
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>无人回复的话题</span>
+    </div>
+    <div class='inner'>
+      
+      <ul class='unstyled'>
+      <li>
+	<div><a class='dark' href="/topic/51de0afdf4963ade0e0971e7" title="关于SWIG工具的疑惑，请答疑">关于SWIG工具的疑惑，请答疑</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/51dd8d02d44cbfa304423e28" title="分享一个用 Flash Socket 连 Pomelo TCP 服务器的组件">分享一个用 Flash Socket 连 Pomelo TCP 服务器的组件</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/51dd3d5bd44cbfa30438ce2b" title="Jul 10, 今天 Grunt 无法正常安装">Jul 10, 今天 Grunt 无法正常安装</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/51dccb43d44cbfa3042752c8" title="Node.js express 跨域问题">Node.js express 跨域问题</a></div>
+</li>
+<li>
+	<div><a class='dark' href="/topic/51da5d80d44cbfa304ec19e6" title="node+socket.io+mysql 多房间聊天室的退出问题。">node+socket.io+mysql 多房间聊天室的退出问题。</a></div>
+</li>
+
+      </ul>
+      
+    </div>
+  </div>
+</div>
+
+<div id='content'>
+  <div class='panel'>
+    <div class='header'>
+      <ul class='breadcrumb'>
+        <li><a href='/'>主页</a><span class='divider'>/</span></li>
+        <li class='active'>话题详情</li>
+      </ul>
+    </div>
+    <div class='inner topic'>
+      <h3>
+      
+        用node做了个日记本网站。
+      </h3>
+      <hr>
+      <div class='topic_content'>
+        <div class="markdown-text"><p>挖个坑，会在这里分享一些开发中遇到的问题。</p>
+<p>也希望能够抛砖引玉，让更多人的和我一起开发这个日记网站。</p>
+<p>网站是全部用nodejs来开发的，数据库用的mongodb，框架用的express，服务器在香港的一台vps上。</p>
+<p>地址：<a href="http://www.tuer.me">tuer.me</a></p>
+<p>目前注册用户30多人，日记写了100多篇了。一切都感觉良好，除了静态资源有点慢，可能这周部分静态资源给扔到国内的sae上去。。</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/62bfb217jw1dvg09la9ozj.jpg" alt="首页"></p>
+</div>
+      </div>
+      <hr>
+      <div class="tags">
+        
+        <span class='col_fade'>标签：</span> 
+        
+<span class='tag_in_topic' tag_id='4f178985d48ce1f82c0023ae'>
+	<a href='/tag/原创文章'>原创文章</a>
+</span>
+
+
+        
+      </div>
+      <div class="changes">
+        <span class='col_fade'>
+          <a class='dark' href="/user/xiaojue">xiaojue</a> 在 2012-7-31 16:46 发布
+        </span>
+        
+        <span class='col_fade'>
+          <a class='dark' href="/user/xiaojue">xiaojue</a> 在 2012-8-9 17:08 重新编辑
+        </span>
+        
+      </div>
+      <div class="action">
+        <a class='dark' id='share_weibo_btn'
+          href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=3020045345',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','','分享来自CNode的话题：用node做了个日记本网站。','',''));"
+          >分享到 weibo</a>
+        
+        
+      </div>
+    </div>
+  </div>  
+  
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>44 回复</span>
+    </div>
+    <div class='cell reply_area reply_item' id="reply1" reply_id="5017a2baf767cc9a51736cdd">
+  <a id="5017a2baf767cc9a51736cdd"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaxiaokang"><img src="http://www.gravatar.com/avatar/5c2dd4e24ba722c4bc5f10cc505328bd?size=48" title="xiaxiaokang" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaxiaokang">xiaxiaokang
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5017a2baf767cc9a51736cdd">2012-7-31 17:17</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#1</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>很不错很简洁</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='5017a366f767cc9a51737489'>
+  <div class='author_content'>
+    <a id="5017a366f767cc9a51737489"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#5017a366f767cc9a51737489">2012-7-31 17:20</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>功能太少了，还没有cnode的这个社区功能多。。慢慢在完善。。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply2" reply_id="5017a5a9f767cc9a51739dfe">
+  <a id="5017a5a9f767cc9a51739dfe"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xieren58"><img src="http://www.gravatar.com/avatar/85394c77cd5d915f13c7b47ecb4c2c06?size=48" title="xieren58" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xieren58">xieren58
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5017a5a9f767cc9a51739dfe">2012-7-31 17:30</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#2</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>又是bootstrap～～～</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply3" reply_id="5017a5b4f767cc9a51739e1d">
+  <a id="5017a5b4f767cc9a51739e1d"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xieren58"><img src="http://www.gravatar.com/avatar/85394c77cd5d915f13c7b47ecb4c2c06?size=48" title="xieren58" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xieren58">xieren58
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5017a5b4f767cc9a51739e1d">2012-7-31 17:30</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#3</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>审美疲劳了～～</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='5017a667f767cc9a5173af70'>
+  <div class='author_content'>
+    <a id="5017a667f767cc9a5173af70"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#5017a667f767cc9a5173af70">2012-7-31 17:33</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>嗯 就一个人业余做的，打算视觉上改改吧。基础部分的css bootstrap挺好的。。后期也会用 就不会用的这么明显了 - -||</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply4" reply_id="5017cd84f767cc9a51771f33">
+  <a id="5017cd84f767cc9a51771f33"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/willmouse"><img src="http://www.gravatar.com/avatar/83978f2e3e51af04e5636d3c11bbd882?size=48" title="willmouse" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/willmouse">willmouse
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5017cd84f767cc9a51771f33">2012-7-31 20:20</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#4</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{2}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>我打开首页花了近1分钟.....</p>
+<p>服务器上的Gzip设置的有问题，css和js都没压缩就传过来了，而且如果用bootstrap的话最好是精简一下内容，其实bootstrap中不少东西你都没有必要加进来，加载部分就够了，这样能极大的提升速度。</p>
+<p>把assert放到国内服务器上这不是重点，只能是锦上添花的一笔。</p>
+<p>另外如果放的话，还是推荐放在又拍云上比较靠谱。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='5017dcecf767cc9a51782dd9'>
+  <div class='author_content'>
+    <a id="5017dcecf767cc9a51782dd9"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#5017dcecf767cc9a51782dd9">2012-7-31 21:26</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>我靠，gzip居然真的设置有问题……。。。我一直没去检查。。。谢谢兄弟。。</p>
+<p>嗯，主要慢还有就是用户头像我直接存的base64，打到页面里可能也会让页面比较慢，这里正在动手改。</p>
+<p>谢谢你啦。。。gzip的我这就去改。。</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='5017df1cf767cc9a517843da'>
+  <div class='author_content'>
+    <a id="5017df1cf767cc9a517843da"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#5017df1cf767cc9a517843da">2012-7-31 21:35</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>gzip的问题已经改好……粗心了……bootstrap的话，我看情况确实要拆分一下。。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply5" reply_id="5017dd05f767cc9a517830b6">
+  <a id="5017dd05f767cc9a517830b6"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5017dd05f767cc9a517830b6">2012-7-31 21:26</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#5</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>额，刚更新了关注的功能……广告下……哈哈= =</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply6" reply_id="5017f6d6f767cc9a517935e2">
+  <a id="5017f6d6f767cc9a517935e2"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/snoopy"><img src="http://www.gravatar.com/avatar/ba5cfa8ed415cdd50b556a9482c696e9?s=48" title="snoopy" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/snoopy">snoopy
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5017f6d6f767cc9a517935e2">2012-7-31 23:16</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#6</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>不错哦啊，风格很简洁，代码开源吗？</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='501804c5f767cc9a5179e59f'>
+  <div class='author_content'>
+    <a id="501804c5f767cc9a5179e59f"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#501804c5f767cc9a5179e59f">2012-8-1 00:16</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>代码写的很不好看。。。想开源但是不太好意思，还是要等我规整一段时间然后部分开源吧。逻辑很简单的东西，大部分功能也都用现成模块~</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply7" reply_id="501811c9f767cc9a517a89a0">
+  <a id="501811c9f767cc9a517a89a0"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/chinawomen"><img src="http://www.gravatar.com/avatar/2928f2e7dc0e3bd50daa96fff4085a29?size=48" title="chinawomen" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/chinawomen">chinawomen
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501811c9f767cc9a517a89a0">2012-8-1 01:11</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#7</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>很好。支持</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply8" reply_id="50181907f767cc9a517b0163">
+  <a id="50181907f767cc9a517b0163"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50181907f767cc9a517b0163">2012-8-1 01:42</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#8</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>刚又增加了分享到微博的按钮…… mark。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply9" reply_id="5018b0bcf767cc9a51808767">
+  <a id="5018b0bcf767cc9a51808767"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/sinple"><img src="http://www.gravatar.com/avatar/882374eba72a496c3de815b03190dba6?size=48" title="sinple" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/sinple">sinple
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5018b0bcf767cc9a51808767">2012-8-1 12:29</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#9</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{4}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>你好，请问一下：能不能把你用的bootstrap的UI发给我一份呢？谢谢。290796120@qq.com</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='5018b57ef767cc9a5180f29c'>
+  <div class='author_content'>
+    <a id="5018b57ef767cc9a5180f29c"></a>
+    <div class='user_avatar block'>
+      <a href="/user/saighost">
+        <img src="http://www.gravatar.com/avatar/a37874482921da3046a8f42928501a98?s=48" title="saighost" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/saighost">saighost</a></span>
+      <span class='col_fade'>
+        <a href="#5018b57ef767cc9a5180f29c">2012-8-1 12:50</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>自取吧: <a href="http://twitter.github.com/bootstrap">bootstrap</a></p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='50191e52f767cc9a518735ad'>
+  <div class='author_content'>
+    <a id="50191e52f767cc9a518735ad"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#50191e52f767cc9a518735ad">2012-8-1 20:17</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>嗯。自己去官网下就可以了。</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='50191ea5f767cc9a51873c59'>
+  <div class='author_content'>
+    <a id="50191ea5f767cc9a51873c59"></a>
+    <div class='user_avatar block'>
+      <a href="/user/sinple">
+        <img src="http://www.gravatar.com/avatar/882374eba72a496c3de815b03190dba6?size=48" title="sinple" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/sinple">sinple</a></span>
+      <span class='col_fade'>
+        <a href="#50191ea5f767cc9a51873c59">2012-8-1 20:18</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/xiaojue">xiaojue</a> 已经自取了，呵呵</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='501fb81ef767cc9a51cf4961'>
+  <div class='author_content'>
+    <a id="501fb81ef767cc9a51cf4961"></a>
+    <div class='user_avatar block'>
+      <a href="/user/skypengyc">
+        <img src="http://www.gravatar.com/avatar/7c89d2e5c018c5f3bd36e32ed953203a?size=48" title="skypengyc" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/skypengyc">skypengyc</a></span>
+      <span class='col_fade'>
+        <a href="#501fb81ef767cc9a51cf4961">2012-8-6 20:27</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/saighost">saighost</a> 感謝提供地址，正需要呢？？</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply10" reply_id="50193c68f767cc9a51886af6">
+  <a id="50193c68f767cc9a51886af6"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/isondada"><img src="http://www.gravatar.com/avatar/d651aa7f35d8f97f0337d6bf07a10014?size=48" title="isondada" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/isondada">isondada
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50193c68f767cc9a51886af6">2012-8-1 22:25</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#10</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>很清爽啊，不错不错，然后，能在首页放个写日记的入口不？个人信息只放一个用户名有点空，可以加操作哇</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='5019550df767cc9a51893771'>
+  <div class='author_content'>
+    <a id="5019550df767cc9a51893771"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#5019550df767cc9a51893771">2012-8-2 00:10</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>首页的话我思考下放在哪。。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply11" reply_id="501a7a48f767cc9a519832c7">
+  <a id="501a7a48f767cc9a519832c7"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501a7a48f767cc9a519832c7">2012-8-2 21:02</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#11</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>把头像单独做了一个接口，不支持渲染base64到页面里了，速度得到很大提升，当初决策失误啊。。</p>
+<p>下一步增加缓存支持，和头像的截取功能。。用的node-canvas来实现的。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply12" reply_id="501ba524f767cc9a51a6bbc8">
+  <a id="501ba524f767cc9a51a6bbc8"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501ba524f767cc9a51a6bbc8">2012-8-3 18:17</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#12</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>2012、8、3<br>1，更新了日记墙的布局。<br>2，配置了nginx，把日记图片都增加了default type。<br>3，对所有用户头像做大小限制，修改完毕，设置部分，增大头像尺寸到150*150，自动截取中间部分为小头像展示【懒得做用户自己截了，改天补上。。】。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply13" reply_id="501bc2f3f767cc9a51a8bea8">
+  <a id="501bc2f3f767cc9a51a8bea8"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501bc2f3f767cc9a51a8bea8">2012-8-3 20:24</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#13</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>更新了说明和帮助页的内容。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply14" reply_id="501e548af767cc9a51bf1017">
+  <a id="501e548af767cc9a51bf1017"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501e548af767cc9a51bf1017">2012-8-5 19:10</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#14</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>增加回复评论和提醒的功能。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply15" reply_id="501e7894f767cc9a51c0e24c">
+  <a id="501e7894f767cc9a51c0e24c"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/solupro"><img src="http://www.gravatar.com/avatar/3c2eb30226dc027368ab8afc3cf6daef?size=48" title="solupro" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/solupro">solupro
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501e7894f767cc9a51c0e24c">2012-8-5 21:43</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#15</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>楼主更新很勤快呀，支持。期待来源！</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='501e9d86f767cc9a51c261ce'>
+  <div class='author_content'>
+    <a id="501e9d86f767cc9a51c261ce"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#501e9d86f767cc9a51c261ce">2012-8-6 00:21</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>今天牺牲了一下真像，换了好几个萌妹子加入啊……</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply16" reply_id="501ed2b9f767cc9a51c4ef29">
+  <a id="501ed2b9f767cc9a51c4ef29"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/peakzhuqq"><img src="http://www.gravatar.com/avatar/783d740436e7d6a2a8c3c2ca3f54cdc4?size=48" title="peakzhuqq" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/peakzhuqq">peakzhuqq
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501ed2b9f767cc9a51c4ef29">2012-8-6 04:08</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#16</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>能不能公开一下源码啊，学习一下。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply17" reply_id="501f4148f767cc9a51c796b9">
+  <a id="501f4148f767cc9a51c796b9"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/senhehe"><img src="http://www.gravatar.com/avatar/16f959e4899347b8de88136cc9b4b3a6?size=48" title="senhehe" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/senhehe">senhehe
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501f4148f767cc9a51c796b9">2012-8-6 12:00</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#17</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>我发布一篇日记用了两分钟，还504.。。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply18" reply_id="501f419df767cc9a51c79bb1">
+  <a id="501f419df767cc9a51c79bb1"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/senhehe"><img src="http://www.gravatar.com/avatar/16f959e4899347b8de88136cc9b4b3a6?size=48" title="senhehe" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/senhehe">senhehe
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501f419df767cc9a51c79bb1">2012-8-6 12:01</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#18</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{2}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>总体做的不错，要是能开源一下共同学习就更好了</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='501f4c53f767cc9a51c85fb5'>
+  <div class='author_content'>
+    <a id="501f4c53f767cc9a51c85fb5"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#501f4c53f767cc9a51c85fb5">2012-8-6 12:47</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>我现在处理图片用的ImageMagick，我发现有比较严重的内存泄露问题。。。你看到你发的了。我今天打算把ImageMagick干掉都换node-canvas处理算了。。504确实是程序出错了。</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='501f4c6bf767cc9a51c86176'>
+  <div class='author_content'>
+    <a id="501f4c6bf767cc9a51c86176"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#501f4c6bf767cc9a51c86176">2012-8-6 12:47</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>源码近期吧。。分层不是写的很漂亮，乱七八糟的。等俺整理整理。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply19" reply_id="501fa605f767cc9a51ce09cb">
+  <a id="501fa605f767cc9a51ce09cb"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501fa605f767cc9a51ce09cb">2012-8-6 19:09</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#19</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>增加全部日记的分页功能，对首页布局改版了。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply20" reply_id="501fb06bf767cc9a51cec071">
+  <a id="501fb06bf767cc9a51cec071"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/guilin"><img src="http://www.gravatar.com/avatar/c126ccb3b6cc4c87d127d2229340e754?s=48" title="guilin" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/guilin">guilin
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#501fb06bf767cc9a51cec071">2012-8-6 19:54</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#20</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{2}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>xiaojue，我記得跟你在qq上聊過啊。</p>
+<p>我想問下，香港的vps，多少錢啊，怎麼購買？</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='501fb3caf767cc9a51cef862'>
+  <div class='author_content'>
+    <a id="501fb3caf767cc9a51cef862"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#501fb3caf767cc9a51cef862">2012-8-6 20:08</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>对 就是我啦。我那个vps一个月150。。。淘宝随便一搜 不少的。。</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='501fd2f9f767cc9a51d0c526'>
+  <div class='author_content'>
+    <a id="501fd2f9f767cc9a51d0c526"></a>
+    <div class='user_avatar block'>
+      <a href="/user/guilin">
+        <img src="http://www.gravatar.com/avatar/c126ccb3b6cc4c87d127d2229340e754?s=48" title="guilin" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/guilin">guilin</a></span>
+      <span class='col_fade'>
+        <a href="#501fd2f9f767cc9a51d0c526">2012-8-6 22:21</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/xiaojue">xiaojue</a> 果然不少，有意思了</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply21" reply_id="5020da81f767cc9a51dbd8eb">
+  <a id="5020da81f767cc9a51dbd8eb"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5020da81f767cc9a51dbd8eb">2012-8-7 17:06</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#21</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>今天增加私密日记的功能~！</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply22" reply_id="50224ff4f767cc9a51eebf6c">
+  <a id="50224ff4f767cc9a51eebf6c"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50224ff4f767cc9a51eebf6c">2012-8-8 19:39</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#22</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>修复了一些图片相关的缓存bug，增加关注日记的功能。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply23" reply_id="50225bf0f767cc9a51ef7303">
+  <a id="50225bf0f767cc9a51ef7303"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/youdoce"><img src="http://www.gravatar.com/avatar/0b990690adb7ad9ecb0e76ca5b64cf55?size=48" title="youdoce" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/youdoce">youdoce
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50225bf0f767cc9a51ef7303">2012-8-8 20:30</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#23</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>支持，，支持，</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply24" reply_id="50225c2cf767cc9a51ef7a21">
+  <a id="50225c2cf767cc9a51ef7a21"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/youdoce"><img src="http://www.gravatar.com/avatar/0b990690adb7ad9ecb0e76ca5b64cf55?size=48" title="youdoce" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/youdoce">youdoce
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50225c2cf767cc9a51ef7a21">2012-8-8 20:31</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#24</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>github地址？</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='50235ea9f767cc9a51fa71ae'>
+  <div class='author_content'>
+    <a id="50235ea9f767cc9a51fa71ae"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#50235ea9f767cc9a51fa71ae">2012-8-9 14:54</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>暂时木有开源……</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply25" reply_id="50235ebef767cc9a51fa7577">
+  <a id="50235ebef767cc9a51fa7577"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50235ebef767cc9a51fa7577">2012-8-9 14:54</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#25</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>增加关注人的list页面，总数预览，修复写日记的几个小bug。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply26" reply_id="50236818f767cc9a51fafc4f">
+  <a id="50236818f767cc9a51fafc4f"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/jin52yang"><img src="http://www.gravatar.com/avatar/b8d67bbd08fd6ec53c5ec26908982ef3?size=48" title="jin52yang" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/jin52yang">jin52yang
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50236818f767cc9a51fafc4f">2012-8-9 15:34</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#26</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{2}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>香港的VPS 需要备案否？</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='502369a1f767cc9a51fb1949'>
+  <div class='author_content'>
+    <a id="502369a1f767cc9a51fb1949"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xieren58">
+        <img src="http://www.gravatar.com/avatar/85394c77cd5d915f13c7b47ecb4c2c06?size=48" title="xieren58" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xieren58">xieren58</a></span>
+      <span class='col_fade'>
+        <a href="#502369a1f767cc9a51fb1949">2012-8-9 15:41</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>不需要~</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='50237deff767cc9a51fcb6c3'>
+  <div class='author_content'>
+    <a id="50237deff767cc9a51fcb6c3"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#50237deff767cc9a51fcb6c3">2012-8-9 17:07</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>不需要。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply27" reply_id="5024897bf767cc9a5107eca6">
+  <a id="5024897bf767cc9a5107eca6"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/daidaier"><img src="http://www.gravatar.com/avatar/8b9264e3a682697b1f680569d3c30570?size=48" title="daidaier" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/daidaier">daidaier
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5024897bf767cc9a5107eca6">2012-8-10 12:09</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#27</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>真心不错，希望增加交友功能 o(-&quot;-)o</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='5024a7c8f767cc9a510a1335'>
+  <div class='author_content'>
+    <a id="5024a7c8f767cc9a510a1335"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#5024a7c8f767cc9a510a1335">2012-8-10 14:18</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>已经有关注功能啦~</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply28" reply_id="5024a859f767cc9a510a2414">
+  <a id="5024a859f767cc9a510a2414"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5024a859f767cc9a510a2414">2012-8-10 14:21</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#28</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>今天更新 禁止任何人回复功能。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply29" reply_id="5024bbd4f767cc9a510b5ccd">
+  <a id="5024bbd4f767cc9a510b5ccd"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/peakzhuqq"><img src="http://www.gravatar.com/avatar/783d740436e7d6a2a8c3c2ca3f54cdc4?size=48" title="peakzhuqq" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/peakzhuqq">peakzhuqq
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5024bbd4f767cc9a510b5ccd">2012-8-10 15:44</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#29</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>楼主是怎么给试图传参的？</p>
+<pre class="prettyprint"><code>app.get(&#39;/&#39;,function(req,res){
+req.flash(&#39;error&#39;,&#39;用户已经注册&#39;);
+console.log(&#39;--&#39;+req.flash(&#39;error&#39;));
+res.render(&#39;index&#39;, { title: &#39;首页&#39;});</code></pre>
+<p>});</p>
+<pre class="prettyprint"><code>app.use(function(req, res, next){</code></pre>
+<p>  //res.locals.title = config[&#39;title&#39;]<br>  //res.locals.csrf = req.session ? req.session._csrf : &#39;&#39;;<br>  res.locals.user = app.get(&#39;user&#39;);<br>  console.log(req.flash(&#39;error&#39;));<br>  res.locals.error = req.flash(&#39;error&#39;).length ? req.flash(&#39;error&#39;) : null ;<br>  res.locals.success = req.flash(&#39;success&#39;).length ? req.flash(&#39;success&#39;) : null ;<br>  next();<br>});//locals</p>
+<p>req.flash(&quot;error&quot;) 无法取到值</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='502509b6f767cc9a51107c09'>
+  <div class='author_content'>
+    <a id="502509b6f767cc9a51107c09"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#502509b6f767cc9a51107c09">2012-8-10 21:16</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>传参就是render(&quot;tempfile&quot;,{<br>errormsg:&quot;用户已经注册&quot;<br>});<br>然后tempfile里直接引用errormsg就成了啊。。。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply30" reply_id="50252d52f767cc9a5111c51d">
+  <a id="50252d52f767cc9a5111c51d"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/peakzhuqq"><img src="http://www.gravatar.com/avatar/783d740436e7d6a2a8c3c2ca3f54cdc4?size=48" title="peakzhuqq" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/peakzhuqq">peakzhuqq
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50252d52f767cc9a5111c51d">2012-8-10 23:48</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#30</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>那res.locals 这个有什么用呢？</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='50288ceaf767cc9a512c6527'>
+  <div class='author_content'>
+    <a id="50288ceaf767cc9a512c6527"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#50288ceaf767cc9a512c6527">2012-8-13 13:13</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>参考文档的说明吧<br><a href="http://expressjs.com/api.html#app.locals">http://expressjs.com/api.html#app.locals</a></p>
+<p>有例子的噢。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply31" reply_id="5026a5c5f767cc9a5120684f">
+  <a id="5026a5c5f767cc9a5120684f"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/peakzhuqq"><img src="http://www.gravatar.com/avatar/783d740436e7d6a2a8c3c2ca3f54cdc4?size=48" title="peakzhuqq" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/peakzhuqq">peakzhuqq
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5026a5c5f767cc9a5120684f">2012-8-12 02:34</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#31</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>我现在有个应用，怎么才能用域名访问到我的应用啊。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='50288d10f767cc9a512c69d3'>
+  <div class='author_content'>
+    <a id="50288d10f767cc9a512c69d3"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#50288d10f767cc9a512c69d3">2012-8-13 13:13</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>这个和node没啥子关系了。你搜索下dns解析，域名指向一类的文章吧~</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply32" reply_id="5038855ff767cc9a51ee8561">
+  <a id="5038855ff767cc9a51ee8561"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/uandur"><img src="http://www.gravatar.com/avatar/4a22c144defb01b767f8347ea99d58df?size=48" title="uandur" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/uandur">uandur
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5038855ff767cc9a51ee8561">2012-8-25 15:57</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#32</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>开源啊，骚年。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='503c6496f767cc9a511e80e4'>
+  <div class='author_content'>
+    <a id="503c6496f767cc9a511e80e4"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#503c6496f767cc9a511e80e4">2012-8-28 14:26</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>恩 我回头写个教程贴吧。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply33" reply_id="503cf8faf767cc9a51240457">
+  <a id="503cf8faf767cc9a51240457"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/TNTDoctor"><img src="http://www.gravatar.com/avatar/bf75ed46f2034fe6cc1075ce888084d8?size=48" title="TNTDoctor" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/TNTDoctor">TNTDoctor
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#503cf8faf767cc9a51240457">2012-8-29 00:59</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#33</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>很不错啊，期待lz的教程</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply34" reply_id="503d9311f767cc9a512a484b">
+  <a id="503d9311f767cc9a512a484b"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/j4cnodejs"><img src="http://en.gravatar.com/userimage/39844924/69d645e9676c64090bca9eb344314fe9.jpg" title="j4cnodejs" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/j4cnodejs">j4cnodejs
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#503d9311f767cc9a512a484b">2012-8-29 11:57</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#34</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>不错,表扬一下!趁现在简单,就开个源吧! 还有, VPS速度不错,是香港哪个机房?或者能告知淘宝哪家买的吗, 配置如何?</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply35" reply_id="503d93f0f767cc9a512a545b">
+  <a id="503d93f0f767cc9a512a545b"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/j4cnodejs"><img src="http://en.gravatar.com/userimage/39844924/69d645e9676c64090bca9eb344314fe9.jpg" title="j4cnodejs" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/j4cnodejs">j4cnodejs
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#503d93f0f767cc9a512a545b">2012-8-29 12:00</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#35</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{6}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>呃,发现一个细节问题: /diarys/ &lt;---这个英语单词的复数形式不对哦, 应该是 diaries, 改一下吧</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='503df43af767cc9a51312562'>
+  <div class='author_content'>
+    <a id="503df43af767cc9a51312562"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#503df43af767cc9a51312562">2012-8-29 18:51</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>啊。。。是的。早发现了。。不过url没改，模版里的改了，这个忘记了- -||。恩 周末改下。</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='503df5bcf767cc9a5131416d'>
+  <div class='author_content'>
+    <a id="503df5bcf767cc9a5131416d"></a>
+    <div class='user_avatar block'>
+      <a href="/user/j4cnodejs">
+        <img src="http://en.gravatar.com/userimage/39844924/69d645e9676c64090bca9eb344314fe9.jpg" title="j4cnodejs" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/j4cnodejs">j4cnodejs</a></span>
+      <span class='col_fade'>
+        <a href="#503df5bcf767cc9a5131416d">2012-8-29 18:58</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/xiaojue">xiaojue</a> 快告诉我是哪家买的vps啊</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='503e0b2ff767cc9a5132a9de'>
+  <div class='author_content'>
+    <a id="503e0b2ff767cc9a5132a9de"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#503e0b2ff767cc9a5132a9de">2012-8-29 20:29</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/j4cnodejs">j4cnodejs</a> 淘宝 搜 香港VPS。。。好多呢 你可以自己感受完速度慢慢选。。</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='503e0b4df767cc9a5132a9e9'>
+  <div class='author_content'>
+    <a id="503e0b4df767cc9a5132a9e9"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#503e0b4df767cc9a5132a9e9">2012-8-29 20:30</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/j4cnodejs">j4cnodejs</a> 配置的话，自选系统，然后随意搞。。</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='503e0ef7f767cc9a5132f8e3'>
+  <div class='author_content'>
+    <a id="503e0ef7f767cc9a5132f8e3"></a>
+    <div class='user_avatar block'>
+      <a href="/user/jaicc">
+        <img src="http://www.gravatar.com/avatar/2d182556fe95f451621078924f139a48?size=48" title="jaicc" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/jaicc">jaicc</a></span>
+      <span class='col_fade'>
+        <a href="#503e0ef7f767cc9a5132f8e3">2012-8-29 20:45</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/xiaojue">xiaojue</a> 选vps 是不是要选mongodb+ nodejs 支持的啊？？还是说都可以，然后自己配环境？？？？不懂部署的问下</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='503e5107f767cc9a5136cce1'>
+  <div class='author_content'>
+    <a id="503e5107f767cc9a5136cce1"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#503e5107f767cc9a5136cce1">2012-8-30 01:27</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/jaicc">jaicc</a> vps就是一台linux服务器，至于服务器怎么配置，看你自己了。再通俗点，就是给你开了一个虚拟机，带外网ip的，然后随便你怎么弄了。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply36" reply_id="503feba7fef59185510e19b1">
+  <a id="503feba7fef59185510e19b1"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/dongxllong"><img src="http://www.gravatar.com/avatar/36ecb6654ccd2111f2cf8fd7fdb608bf?size=48" title="dongxllong" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/dongxllong">dongxllong
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#503feba7fef59185510e19b1">2012-8-31 06:39</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#36</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>为啥我看到的网站是完全没有样式表现的，求解释..</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='50405c9dfef59185511246a2'>
+  <div class='author_content'>
+    <a id="50405c9dfef59185511246a2"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#50405c9dfef59185511246a2">2012-8-31 14:41</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>再刷几次 服务器不太好，可能样式请求挂掉了。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply37" reply_id="50405f38fef59185511280b0">
+  <a id="50405f38fef59185511280b0"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/miser"><img src="http://www.gravatar.com/avatar/80e9e34cd2f4e1ec89ff2f8f386139dd?s=48" title="miser" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/miser">miser
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50405f38fef59185511280b0">2012-8-31 14:52</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#37</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>刚开始接触Nodejs，想知道如何在express里面插入一个用户是否登入验证的方法，而不必为每个app.get 里面添加一次这个方法</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='50409496fef591855115f8e4'>
+  <div class='author_content'>
+    <a id="50409496fef591855115f8e4"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#50409496fef591855115f8e4">2012-8-31 18:40</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>在<br>app.get(&quot;*&quot;,function(req,res,next){</p>
+<p>});<br>里面增加登陆验证，如果登陆了就next，如果没登陆就跳出。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply38" reply_id="50424404fef5918551286c22">
+  <a id="50424404fef5918551286c22"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/chrisbi"><img src="http://www.gravatar.com/avatar/10d9dd839192afc8def13e85af0d2c4c.png" title="chrisbi" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/chrisbi">chrisbi
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#50424404fef5918551286c22">2012-9-2 01:21</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#38</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>我才刚学习Nodejs，已经有大大发布作品了，很不错，顶一个。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply39" reply_id="505285d121f004b6010d14f6">
+  <a id="505285d121f004b6010d14f6"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/jackkang"><img src="http://www.gravatar.com/avatar/bc2bcd717886ec890e677998143408ad?s=48" title="jackkang" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/jackkang">jackkang
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#505285d121f004b6010d14f6">2012-9-14 09:18</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#39</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>我很有兴趣，之前弄过一段时间nodejs，后来因为项目不需要了所以也就没太关注！</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply40" reply_id="5173b28a6d38277306f28f3a">
+  <a id="5173b28a6d38277306f28f3a"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/JohnSmith"><img src="http://www.gravatar.com/avatar/ba9098b274cdfb417bbb0c0f04d7d056?size=48" title="JohnSmith" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/JohnSmith">JohnSmith
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5173b28a6d38277306f28f3a">4-21 17:34</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#40</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>做的不错，赞一个！</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='51777e126d382773063b2093'>
+  <div class='author_content'>
+    <a id="51777e126d382773063b2093"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#51777e126d382773063b2093">4-24 14:39</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>那个面向的不是程序员额。就默认的头像。。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply41" reply_id="5173b2bd6d38277306f29426">
+  <a id="5173b2bd6d38277306f29426"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/JohnSmith"><img src="http://www.gravatar.com/avatar/ba9098b274cdfb417bbb0c0f04d7d056?size=48" title="JohnSmith" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/JohnSmith">JohnSmith
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5173b2bd6d38277306f29426">4-21 17:34</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#41</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>可以加个 Gavartar 的头像呢</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply42" reply_id="5174c2c96d3827730603e248">
+  <a id="5174c2c96d3827730603e248"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/leapon"><img src="http://www.gravatar.com/avatar/3991e727ca4261b83566e436294fb90d?size=48" title="leapon" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/leapon">leapon
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#5174c2c96d3827730603e248">4-22 12:55</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#42</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{1}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>注册不上。confirmation email 发得非常慢。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='51777dfa6d382773063b1f3c'>
+  <div class='author_content'>
+    <a id="51777dfa6d382773063b1f3c"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#51777dfa6d382773063b1f3c">4-24 14:38</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>看看垃圾邮箱，应该都能注册上的。你是什么邮箱？我会有发送失败的记录。</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply43" reply_id="517807a96d3827730647b941">
+  <a id="517807a96d3827730647b941"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/firstgeniusboy"><img src="http://www.gravatar.com/avatar/3e64d967fa5dc565760fb91eef10b0d4?size=48" title="firstgeniusboy" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/firstgeniusboy">firstgeniusboy
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#517807a96d3827730647b941">4-25 00:26</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#43</span>
+      
+      <span>
+        
+        <!--
+         <span class='col_fade'>{2}</span>
+        -->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>很喜欢这种简洁的画面</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+        <div class='cell reply2_item' reply_id='5178f56d6d382773066bc0e6'>
+  <div class='author_content'>
+    <a id="5178f56d6d382773066bc0e6"></a>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue">
+        <img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/xiaojue">xiaojue</a></span>
+      <span class='col_fade'>
+        <a href="#5178f56d6d382773066bc0e6">4-25 17:20</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p>谢谢亲啊</p>
+</div>
+  </div>
+</div>
+<div class='cell reply2_item' reply_id='51791f0b6d382773066f7171'>
+  <div class='author_content'>
+    <a id="51791f0b6d382773066f7171"></a>
+    <div class='user_avatar block'>
+      <a href="/user/firstgeniusboy">
+        <img src="http://www.gravatar.com/avatar/3e64d967fa5dc565760fb91eef10b0d4?size=48" title="firstgeniusboy" />
+      </a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'><a class='dark' href="/user/firstgeniusboy">firstgeniusboy</a></span>
+      <span class='col_fade'>
+        <a href="#51791f0b6d382773066f7171">4-25 20:18</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      
+      <span>
+        
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+    <div class="markdown-text"><p> @<a href="/user/xiaojue">xiaojue</a> 我也刚做了个东西，等功能全了请你帮忙提点意见</p>
+</div>
+  </div>
+</div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class='cell reply_area reply_item' id="reply44" reply_id="51dd339bd44cbfa3043776b1">
+  <a id="51dd339bd44cbfa3043776b1"></a>
+  <div class='author_content'>
+    <div class='user_avatar block'>
+      <a href="/user/xiaojue"><img src="http://www.gravatar.com/avatar/49fe457f6afcdbe1535c1485ae6ec5cb?s=48" title="xiaojue" /></a>
+    </div>
+    <div class='user_info'>
+      <span class='reply_author'>
+        <a class='dark' href="/user/xiaojue">xiaojue
+        </a>
+      </span>
+      <span class='col_fade'>
+        <a href="#51dd339bd44cbfa3043776b1">7-10 18:12</a>
+      </span>
+    </div>
+    <div class='user_action'>
+      <span class='col_fade'>#44</span>
+      
+      <span>
+        
+        <!---->
+      </span>
+    </div>
+  </div>
+  <div class='reply_content'>
+  <div class="markdown-text"><p>这几天把ie8以上的限制也去掉了，网站ui又有了进一步优化，欢迎大家试用。。</p>
+</div>
+  </div>
+  <div class='clearfix'>
+    <div class='reply2_area'>
+      
+      
+    </div>
+  </div>
+</div>
+
+  </div>
+  
+  
+</div>
+
+
+<script src="http://cnodejs.qiniudn.com/public/fancebox.min.81d92ecc.js"></script>
+<link rel="stylesheet" href="http://cnodejs.qiniudn.com/public/libs/fancybox/fancebox.min.a4966e97.css" media="all" />
+
+
+      </div>
+    </div>
+    <div id='backtotop'>回到顶部</div>
+    <div id='footer'>
+      <div id='footer_main'>
+        <div class="links">
+          <a class='dark' href='/about'><strong>关于</strong></a>
+          |
+          <a class='dark' href='/faq'><strong>FAQ</strong></a>
+          |
+          <a class='dark' href='https://github.com/cnodejs/nodeclub/' target="_blank"><strong>Github</strong></a>
+          |
+          <a class='dark' href='/rss' target="_blank"><strong>RSS</strong></a>
+        </div>
+        <div class='col_fade'>
+          &copy; 2012 - 2013 <br>本社区为开源系统，版本: 0.3.5 ，欢迎贡献代码<br>
+          由<a href='http://cnodejs.net' target='_blank'> NAE </a>为 CNode 提供动力
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<br/>
