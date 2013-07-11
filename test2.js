@@ -106,6 +106,8 @@ function sp2(cont, data){
 
     console.log('reply : ' + count);
 
+    var ds = '';
+
     //循环获取并处理
     for(var i=0;i<count;i++){
 
@@ -115,7 +117,12 @@ function sp2(cont, data){
         var ct2 = $('div.markdown-text').eq(i).html();
 
         var buf2 = new Buffer(ct2 ,'binary');
-        data += iconv.decode(buf2 , 'utf-8'); 
+        ds = iconv.decode(buf2 , 'utf-8'); 
+
+        //重新拼接出一个div
+        ds = util.format('<div class="reply">%s</div>', ds);
+
+        data += ds;
     }
 
     //把数据写入到爬虫的文件上
