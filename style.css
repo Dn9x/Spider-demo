@@ -8,6 +8,7 @@
 	text-align: left;
 	border: 1px solid #ccc;
 	border-radius:3px;
+	background-color: #eee;
 }
 
 .title a
@@ -24,8 +25,8 @@
 {
 	margin: 4px auto;
 	width: 50%;
-	height: 22px;
-	line-height: 22px;
+	height: auto;
+	padding: 4px auto;
 	text-align: left;
 	border: 1px solid #ccc;
 	border-radius:3px;
