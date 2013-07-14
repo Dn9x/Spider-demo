@@ -3,12 +3,14 @@
 {
 	margin: 4px auto;
 	width: 60%;
-	height: 22px;
-	line-height: 22px;
+	height: auto;
 	text-align: left;
 	border: 1px solid #ccc;
 	border-radius:3px;
 	background-color: #eee;
+	padding: 6px 4px;
+	word-wrap: break-word;
+	word-break: normal;
 }
 
 .title a
