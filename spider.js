@@ -3,79 +3,59 @@ var fs = require('fs');
 var iconv = require('iconv-lite');
 var cheerio = require('cheerio');
 var util = require('util');
+var models = require('./model/db'),
+  Tits = models.Tits;
 
-//抓取的方法
-exports.writeData = function(url, filename, callback){
-    console.log('writeData 1 ');
+//要抓取的网址，这里只能抓取这个url
+//var url = "http://cnodejs.org/?page="
 
-    var dats = '';
-
-	//抓取
+exports.get = function(url, callback){
+        console.log('url : %s', url);
+    //抓取
     http.get(url , function(res){
-        console.log('writeData 2 ');
-	    //保存抓取信息
+        //保存抓取信息
         var stack = '';
-	
-	    //设置编码
+
+        var j = 0;
+
+        //设置编码
         res.setEncoding('binary');
 
-	    //拼接抓取数据
+        //拼接抓取数据
         res.on('data' , function(d){
             stack += d; 
 
-            console.log('writeData 3 ');
+            console.log('J: %s', j);
+
+            j++;
         }).on('error',function(err){
-		//如果出错就输出
+            //如果出错就输出
             console.log(err.message);
+        }).on('end', function(){
+            sp(stack);
         });
-
-	    //抓取结束
-        res.on('end' , function(){
-            console.log('writeData 4 ');
-	        //设置编码
-            var buf = new Buffer(stack ,'binary');
-
-	        //转换编码
-            var dat = iconv.decode(buf , 'utf-8') + "<br/>"; 
-
-	        //把抓取的结果保存到文件里面
-            fs.writeFile(filename, dat, function (err) {
-                if (err){
-                    console.log('write source' + err);
-                };
-
-                console.log('writeData 5 ');
-
-                readData(dat);
-
-                callback();
-            });
-        }).on('error',function(err){
-            console.log(err.message);
-        })
     }).on('error', function(err){
         console.log(err.message);
     });
-}
+};
 
 //拼接抓取到数据里面有用的信息
-function readData(cont){
-    console.log('readData 1 ');
+function sp(cont){
+	//加载整个文档，也就是上面抓取到的数据
+	$ = cheerio.load(cont);
 
-    //console.log('readData 1 cont:  ' + cont);
-
-    //加载整个文档，也就是上面抓取到的数据
-    $ = cheerio.load(cont);
-
-    //获取首页有多少个帖子
+	//获取首页有多少个帖子
     var count = $('div.topic_wrap').length;
 
-    //用于拼接有用数据
+	//用于拼接有用数据
     var data = '';
 
-    //循环获取并处理
+    console.log('count %s', count);
+
+	//循环获取并处理
     for(var i=0;i<count;i++){
-        console.log('readData 2 i=: ' + i);
+        console.log('i : ' + i);
+
         //获取帖子的链接
         var ct2 = $('div.topic_wrap a').eq(i).attr('href').replace('/topic/', 'http://cnodejs.org/topic/');
         var buf2 = new Buffer(ct2 ,'binary');
@@ -91,47 +71,18 @@ function readData(cont){
         var buf3 = new Buffer(ct3 ,'binary');
         var tim = iconv.decode(buf3 , 'utf-8'); 
 
-        //重新拼接出一个div
-        data += util.format('<div class="title"><a href="%s" target="_blank">%s</a>%s</div>', href, tit, tim);
-
-        console.log('readData 3 ');
+        save(tit, href, tim, i);
     }
-
-    //把数据写入到爬虫的文件上
-          fs.writeFile('spider.txt', data, function (err) {
-            if (err){
-                console.log('write splid :' + err);
-            };
-            console.log('appendFileSync splid : OK');
-          });
 }
 
-//拼接抓取到数据里面有用的信息
-exports.readCont = function(cont, callback){
+function save(tit, href, tim, i){
+    var title = new Tits({title: tit, href: href, replys: 0, times: tim});
 
-    console.log('readCont 1 ');
+    title.save(function(err){
+        if(err){
+            console.log('error: %s', err);
+        }
 
-    //加载整个文档，也就是上面抓取到的数据
-    $ = cheerio.load(cont);
-
-    //获取首页有多少个replay
-    var count = $('div.reply_item').length;
-
-    //用于拼接有用数据
-    var data = '';
-
-    //循环获取并处理
-    for(var i=0;i<count;i++){
-
-        console.log('readCont 2 i: ' + i);
-
-        //获取帖子的链接
-        var ct2 = $('div.reply_item').eq(i).html();
-        var buf2 = new Buffer(ct2 ,'binary');
-        data += iconv.decode(buf2 , 'utf-8'); 
-    }
-
-    console.log('readCont 3 ');
-
-    callback(data);
+        console.log('%s title save success', i);
+    });
 }

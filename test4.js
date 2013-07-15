@@ -1,4 +1,4 @@
-var spider = require('./test3');
+var spider = require('./spider');
 
 
 for(var i=1; i<21; i++){
